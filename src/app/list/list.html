@@ -1,0 +1,16 @@
+
+
+<div *ngIf="viewornot">
+
+<div class="list">
+  <h1>List of Cars</h1>
+  @if(carNames.length > 0) {
+  <ul>
+    <li *ngFor="let car of carNames">{{ car }}</li>
+  </ul>
+}@else {
+    <p>No Cars Available.</p>
+}
+  </div>
+
+</div>

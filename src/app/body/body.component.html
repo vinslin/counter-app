@@ -1,0 +1,35 @@
+
+<app-counter></app-counter>
+<app-demo></app-demo>
+<div>
+<app-form  (view)="viewTransfer($event)"></app-form>
+<app-list  [viewornot]="view"></app-list>
+
+</div>
+
+<div *ngIf="view">
+<div>
+<h1>Lifecycle Hooks Example</h1>
+<input type="text" [(ngModel)]="name"/> 
+
+<app-cycle [items]="itemsList" [title]="name"></app-cycle>
+
+</div>
+
+<h2>NgOnInit Hook</h2>
+<p>message : {{msg }}</p>
+
+
+<h1>ngAfterContentInit Hook</h1>
+
+<app-aftercontent>
+    <p #messageContent>hello gular</p>
+    <p #messageContent>this is a simple example</p>
+</app-aftercontent>
+</div>
+
+
+<app-post></app-post>
+<!-- <app-home.component></app-home.component> -->
+
+<app-profile-editor><app-profile-editor>

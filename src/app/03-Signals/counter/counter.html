@@ -1,0 +1,110 @@
+
+
+<input type="checkbox" [(ngModel)]="viewornot" /> Subject 2
+<div *ngIf="viewornot">
+
+
+<p>Angular Signals!</p>
+
+
+
+<h1>Count:{{counted()}}</h1>
+
+<h1>Double Count:{{doubleCounted()}}</h1>
+<button (click)="Increment()">Increment</button>
+
+
+<h1>ngfor  example</h1>
+<li *ngFor="let movie of movies">{{movie}}</li>
+
+<h1>ng variable example</h1>
+<ul>
+<li *ngFor="let fruit of fruits; let i = index; let isFirst = first; let isLast = last">
+  
+     <strong *ngIf="isFirst">First  :</strong>
+
+     <strong *ngIf="isLast">Last  :</strong>
+
+
+<strong>{{i}}</strong> - {{fruit}} </li>
+</ul>
+
+<h1>ngodd even emample</h1>
+<ul>
+<li *ngFor="let movie of movies; let i = index" [ngClass]="{'odd': i % 2 !== 0, 'even': i % 2 === 0}">
+   <strong *ngIf="i % 2 === 0"><span >Even:  {{movie}} </span></strong> 
+    <span *ngIf="i % 2 !== 0">Odd:   {{movie}}</span>
+   
+</li>
+</ul>
+
+
+
+<!-- ngFor basic example -->
+<h1>ngFor example</h1>
+<ul>
+  <li *ngFor="let movie of movies">{{ movie }}</li>
+</ul>
+
+<hr>
+
+<!-- ng variable example (first, last, index) -->
+<h1>ng variable example</h1>
+<ul>
+  <li *ngFor="let fruit of fruits; let i = index; let isFirst = first; let isLast = last">
+    <strong *ngIf="isFirst">First: </strong>
+    <strong *ngIf="isLast">Last: </strong>
+    <strong>{{ i }}</strong> - {{ fruit }}
+  </li>
+</ul>
+
+<hr>
+
+<!-- ng odd/even using i % 2 -->
+<h1>ng odd even example</h1>
+<ul>
+  <li *ngFor="let movie of movies; let i = index"
+      [ngClass]="{ 'odd': i % 2 !== 0, 'even': i % 2 === 0 }">
+    <strong *ngIf="i % 2 === 0">Even: {{ movie }}</strong>
+    <span *ngIf="i % 2 !== 0">Odd: {{ movie }}</span>
+  </li>
+</ul>
+
+<hr>
+
+<!-- ng odd/even using Angular built-in 'even' and 'odd' -->
+ <h1>ng another odd even example</h1>
+<ul>
+  <li *ngFor="let movie of movies; let i = index; let isEven = even; let isOdd = odd"
+      [ngClass]="{ 'even-item': isEven, 'odd-item': isOdd }">
+    <strong *ngIf="isEven">Even: {{ movie }}</strong>
+    <span *ngIf="isOdd">Odd: {{ movie }}</span>
+  </li>
+</ul>
+
+
+<h1>ngIf example and also two way binding</h1>
+<label>
+  <input type="checkbox" [(ngModel)]="conditionda" /> click
+</label>
+
+<p *ngIf="conditionda">Catch me if you can</p>
+
+
+
+
+
+<h1>ngClass dynamic classes</h1>
+<label>
+  <input type="checkbox" [(ngModel)]="applyred" /> click
+</label>
+
+<p [ngClass]="{'primary':applyred}">Sample Text<p>
+
+
+<h3 style="color:red;">Normal Style  </h3>
+
+
+<h3 [ngStyle]="{'color':'red'}">functional ngStyle </h3>
+
+</div>

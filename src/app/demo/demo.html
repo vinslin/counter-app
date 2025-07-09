@@ -1,0 +1,58 @@
+
+
+<input type="checkbox" [(ngModel)]="viewornot" /> subject 3
+<div *ngIf="viewornot">
+
+    <h1>Custom Directive Example</h1>
+
+<p [appHighlight]="''">inbuild</p>
+<p [appHighlight]="'lightgreen'">light green</p>
+<p [appHighlight]="'lightblue'">light blue</p>
+
+<p [appHighlight]="'black'">light black</p>
+
+<p [appHighlight]="'lightyellow'">light yellow</p>
+
+<input type="text" [appHighlight]="'lightpink'" placeholder="light pink" />
+
+
+<hr>
+<hr>
+<h1>Pipes in Angular</h1>
+<p>Angular is a powerful framework that provides a wide range of features,
+     including the ability to create custom pipes. Pipes are used to transform 
+     data in templates, making it easier to display and manipulate data in a  user-friendly way.</p> 
+
+
+<P>NORMAL DATE</P><h3>{{toDate}}</h3>
+
+
+<P>FROMATTED DATE  with PIPES</P><h3>{{toDate | date}}</h3>
+
+<P>medium DATE  with PIPES</P><h3>{{toDate | date:'medium'}}</h3>
+
+<P>short DATE  with PIPES</P><h3>{{toDate | date:'short'}}</h3>
+
+<P>full DATE  with PIPES</P><h3>{{toDate | date:'fullDate'}}</h3>
+
+<P>long DATE  with PIPES</P><h3>{{toDate | date:'longDate'}}</h3>
+
+<p>Default text in pipes {{expipes}}</p>
+<p>getting hello :{{expipes | slice:0:5}}</p>
+
+<h2>item list</h2>
+<ul>
+  <li *ngFor="let item of ['apple', 'banana', 'cherry','mango'] | slice:0:3">{{item}}</li>
+</ul>
+
+
+<h2>uppercase lowercase pipes</h2>
+<p>uppercase {{expipes | uppercase | slice:0:6}}</p>
+<p>lowercase {{expipes | lowercase}}</p>
+
+<h2>currency pipe</h2>
+<p>currency {{1000 | currency}}</p>     
+<p>currency {{1000 | currency:'USD'}}</p>       
+<p>currency {{1000 | currency:'EUR'}}</p>
+<p>currency {{1000 | currency:'INR'}}</p>    
+</div>  

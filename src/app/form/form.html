@@ -1,0 +1,12 @@
+
+<input type="checkbox"  [(ngModel)]="viewornot" (change)="sendView()"/> subject 4
+<div *ngIf="viewornot">
+
+    <h1>Forms data transportations</h1>
+    <form (ngSubmit)="onSubmit()">
+        <label for="">car:</label>
+        <input type="text"   name="carName"   [(ngModel)]="carName"/>
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
